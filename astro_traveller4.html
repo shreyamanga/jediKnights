@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astro Traveller</title>
+  <link rel="stylesheet" href="astro_traveller4.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <img src="AC.png" class="ACpic">
+    <div class="border">
+    <header>
+        <h1>ASTRO<br>
+            TRAVELLER</h1>
+        <nav>
+            <a href="astro_traveller1.html" class="home">HOME</a>
+            <a href="astro_traveller3.html" class="community">ROVERS</a>
+            <a href="astro_traveller2.html" class="login">LOG IN/SIGN UP</a>
+        </nav>
+    </header>
+    <h1 class="msg">You can select upto four Rovers</h1>
+    <FORM Name="myform">
+      <!--<label for="memoryItem" accesskey="s">Select First Rover</label>-->
+        <SELECT name="memoryItem" class="select" onChange="calculatePrice()" id="memoryItem">
+            <OPTION value="0">Select First Rover</OPTION>
+            <OPTION value="1190">Moon Walk</OPTION>
+            <OPTION value="1250">Retro Machine</OPTION>
+            <OPTION value="3890">Skyjet</OPTION>
+            <OPTION value="4450">After Earth</OPTION>
+            <OPTION value="5670">Vaccum Bike</OPTION>
+            <OPTION value="8900">Death Star</OPTION>
+        </SELECT>
+
+
+        <SELECT class="select" onChange="calculatePrice()" id="hddItem">
+            <OPTION value="0">Select Second Rover</OPTION>
+            <OPTION value="1190">Moon Walk</OPTION>
+            <OPTION value="1250">Retro Machine</OPTION>
+            <OPTION value="3890">Skyjet</OPTION>
+            <OPTION value="4450">After Earth</OPTION>
+            <OPTION value="5670">Vaccum Bike</OPTION>
+            <OPTION value="8900">Death Star</OPTION>
+        </SELECT>
+
+        <SELECT class="select" onChange="calculatePrice()" id="networkItem">
+            <OPTION value="0">Select Third Rover</OPTION>
+            <OPTION value="1190">Moon Walk</OPTION>
+            <OPTION value="1250">Retro Machine</OPTION>
+            <OPTION value="3890">Skyjet</OPTION>
+            <OPTION value="4450">After Earth</OPTION>
+            <OPTION value="5670">Vaccum Bike</OPTION>
+            <OPTION value="8900">Death Star</OPTION>
+        </SELECT>
+        <SELECT class="select" onChange="calculatePrice()" id="lastitem">
+            <OPTION value="0">Select Fourth Rover</OPTION>
+            <OPTION value="1190">Moon Walk</OPTION>
+            <OPTION value="1250">Retro Machine</OPTION>
+            <OPTION value="3890">Skyjet</OPTION>
+            <OPTION value="4450">After Earth</OPTION>
+            <OPTION value="5670">Vaccum Bike</OPTION>
+            <OPTION value="8900">Death Star</OPTION>
+        </SELECT>
+        </FORM>
+
+       <label class="textpri" for="price">Total Price</label><INPUT class="price" type="text" id="PicExtPrice" Size=8 disabled>
+         <p id="demo"></p>
+<script>
+    function calculatePrice(myform){
+
+//Get selected data
+var elt = document.getElementById("memoryItem");
+var memory = elt.options[elt.selectedIndex].value;
+
+var elt = document.getElementById("hddItem");
+var hdd = elt.options[elt.selectedIndex].value;
+
+var elt = document.getElementById("networkItem");
+var network = elt.options[elt.selectedIndex].value;
+var elt = document.getElementById("lastitem");
+var item = elt.options[elt.selectedIndex].value;
+
+//convert data to integers
+memory = parseInt(memory);
+hdd = parseInt(hdd);
+network = parseInt(network);
+item = parseInt(item);
+
+//calculate total value
+var total = memory+hdd+network+item;
+
+//print value to  PicExtPrice
+document.getElementById("PicExtPrice").value="₹"+total+"/-";
+document.getElementById("demo").innerHTML = total;
+}
+</script>
+
+<div class="button">
+  <a href="astro_traveller5.html" class="reciept">Proceed to Pay</a>
+</div>
+  </body>
